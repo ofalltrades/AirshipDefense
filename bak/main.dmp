@@ -1,0 +1,51 @@
+
+******* 0 Label(s) *******
+
+******* 0 Unused label(s) *******
+
+******* 23 Variable(s) *******
+BGCOL0  = $D021
+BGCOL1  = $D022
+BGCOL2  = $D023
+BGCOL3  = $D024
+Black  = $0000
+Blue  = $0006
+Brown  = $0009
+Cyan  = $0003
+DarkGray  = $000B
+EXTCOL  = $D020
+Green  = $0005
+LightBlue  = $000E
+LightGray  = $000F
+LightGreen  = $000D
+LightRed  = $000A
+MediumGray  = $000C
+Orange  = $0008
+Purple  = $0004
+Red  = $0002
+SpaceCharacter  = $0020
+tgt_c64  = $0001
+White  = $0001
+Yellow  = $0007
+******* 20 Unused variables(s) *******
+BGCOL0
+BGCOL1
+BGCOL2
+BGCOL3
+Brown
+Cyan
+DarkGray
+EXTCOL
+Green
+LightBlue
+LightGray
+LightGreen
+LightRed
+MediumGray
+Orange
+Purple
+SpaceCharacter
+tgt_c64
+White
+Yellow
+

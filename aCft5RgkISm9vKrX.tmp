@@ -1,0 +1,142 @@
+##{0:0:0:main.prg}C:\dev\C64\Airship Defence\main.asm
+
+;_______________________________________________________________________________
+;
+;         Prg Entry Point 
+;_______________________________________________________________________________
+;-------------------------------------------------------------------------------
+
+
+
+;__BASIC LOADER_________________________________________________________________
+;
+;  10 SYS (2049):REM 
+;  (15 bytes) - runs asm code
+;_____________________________________
+
+@=$0801                            ; default loc for C64 BASIC prgs 
+
+          byte $0E, $08, $0A, $00, $9E, $20, $28, $32
+          byte $30, $36, $34, $29, $00, $00, $00
+;_______________________________________________________________________________
+
+
+
+;__INIT_________________________________________________________________
+
+          sei                      ; Turn off interrupts
+                                   ;   Prevents VLib_Wait sometimes failing
+                                   ;   when kernal interrupt syncs with scanline
+                                   ;   test, etc.
+          
+          lda            #$FC      ; Disable run/stop + restore keys
+          sta            $0328     
+          
+          VLib_SetBdrCol BLACK
+          VLib_SetBGCols BLACK, BLACK, BLACK, BLACK
+;_______________________________________________________________________________
+
+
+
+;__PRG PROPER_____________________________________________$0810 (2064 decimal)__
+
+
+          
+
+##{0:0:0:game.prg}C:\dev\C64\Airship Defence\game.asm
+
+;__GAME LOOP____________________________________________________________________
+
+gameLoop_glb
+          
+          VLib_Wait      255   
+          ; UPDATE GAME
+          jmp            gameLoop_glb
+
+##{0:0:0:video_lib.prg}C:\dev\C64\Airship Defence\video_lib.asm
+
+;__COLOR CONSTANTS______________________________________________________________
+
+BLACK           = 0
+WHITE           = 1
+RED             = 2
+CYAN            = 3 
+PURPLE          = 4
+GREEN           = 5
+BLUE            = 6
+YELLOW          = 7
+ORANGE          = 8
+BROWN           = 9
+LIGHT_RED       = 10
+DARK_GRAY       = 11
+MED_GRAY        = 12
+LIGHT_GREEN     = 13
+LIGHT_BLUE      = 14
+LIGHT_GRAY      = 15
+          
+
+;__MACROS_______________________________________________________________________
+
+defm      VLib_Wait
+          
+_loop     lda            #/1
+          cmp            @RASTER    
+          bne            _loop
+
+          endm
+
+
+                                   
+defm      VLib_SetBdrCol           ; _ -> <set border color>    
+
+          lda            #/1
+          sta            @EXTCOL             
+
+          endm
+
+
+
+defm      VLib_SetBGCols           ; (bgc1, bgc2, bgc3, bgc4) -> <set bg colors>               
+          
+          lda            #/1              
+          sta            @BGCOL0            
+          lda            #/2                
+          sta            @BGCOL1           
+          lda            #/3               
+          sta            @BGCOL2            
+          lda            #/4                
+          sta            @BGCOL3              
+          
+          endm
+          
+
+
+
+##{0:0:0:memory.prg}C:\dev\C64\Airship Defence\memory.asm
+
+;_______________________________________________________________________________
+;
+;         Memory Layout
+;_______________________________________________________________________________
+;-------------------------------------------------------------------------------
+
+;__RAM__________________________________________________________________________
+;
+; $C000-$CFFF  -  (4K)
+;_______________________________________________________________________________
+
+
+
+;__IO___________________________________________________________________________
+;
+; $D000-$DFFF  -  (4K)
+;_______________________________________________________________________________
+
+@RASTER         = $D012
+
+@EXTCOL         = $D020
+@BGCOL0         = $D021
+@BGCOL1         = $D022
+@BGCOL2         = $D023
+@BGCOL3         = $D024
+
