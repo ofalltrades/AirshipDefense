@@ -1,41 +1,26 @@
 ;__COLOR CONSTANTS______________________________________________________________
 
-BLACK          = 0
-BLK            = 0
-WHITE          = 1
-WHT            = 1
+BLK            = 0       ; black
+WHT            = 1       ; white
 RED            = 2
-CYAN           = 3 
-CYN            = 3
-PURPLE         = 4
-PPL            = 4
-GREEN          = 5
-GRN            = 5
-BLUE           = 6
-BLU            = 6
-YELLOW         = 7
-YLW            = 7
-ORANGE         = 8
-ORG            = 8
-BROWN          = 9
-BRN            = 9
-LIGHT_RED      = 10
-L_RED          = 10
-DARK_GRAY      = 11
-D_GRY          = 11
-MED_GRAY       = 12
-M_GRY          = 12
-LIGHT_GREEN    = 13
-L_GRN          = 14
-LIGHT_BLUE     = 14
-L_BLU          = 14
-LIGHT_GRAY     = 15
-L_GRY          = 15
+CYN            = 3       ; cyan
+PPL            = 4       ; purple
+GRN            = 5       ; green
+BLU            = 6       ; blue
+YLW            = 7       ; yellow
+ORG            = 8       ; orange
+BRN            = 9       ; brown
+L_RED          = 10      ; light red
+D_GRY          = 11      ; dark gray
+M_GRY          = 12      ; medium gray
+L_GRN          = 14      ; light green
+L_BLU          = 14      ; light blue
+L_GRY          = 15      ; light gray
 
 
 ;__MACROS_______________________________________________________________________
 
-defm      VLib_Wait
+defm      VLib_Wait                ; (scanline) -> <wait for scanline>
           
 _loop     lda            #/1
           cmp            @RASTER    

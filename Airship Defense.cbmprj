@@ -12,7 +12,7 @@
     <GenToDisk>False</GenToDisk>
     <BuildToPrgFile>True</BuildToPrgFile>
     <d64Name />
-    <Comments>Airship Defence: We've Been Hit!</Comments>
+    <Comments>Airship Defense: We've Been Hit!</Comments>
     <Author>Jake Johnson</Author>
     <AutoLaunchName>airship-defence.prg</AutoLaunchName>
     <Cartridge>

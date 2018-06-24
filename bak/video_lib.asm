@@ -1,35 +1,71 @@
-;__Colors_______________________________________________________________________
+;__COLOR CONSTANTS______________________________________________________________
 
-Black           = 0
-White           = 1
-Red             = 2
-Cyan            = 3 
-Purple          = 4
-Green           = 5
-Blue            = 6
-Yellow          = 7
-Orange          = 8
-Brown           = 9
-LightRed        = 10
-DarkGray        = 11
-MediumGray      = 12
-LightGreen      = 13
-LightBlue       = 14
-LightGray       = 15
-SpaceCharacter = 32
+BLACK          = 0
+BLK            = 0
+WHITE          = 1
+WHT            = 1
+RED            = 2
+CYAN           = 3 
+CYN            = 3
+PURPLE         = 4
+PPL            = 4
+GREEN          = 5
+GRN            = 5
+BLUE           = 6
+BLU            = 6
+YELLOW         = 7
+YLW            = 7
+ORANGE         = 8
+ORG            = 8
+BROWN          = 9
+BRN            = 9
+LIGHT_RED      = 10
+L_RED          = 10
+DARK_GRAY      = 11
+D_GRY          = 11
+MED_GRAY       = 12
+M_GRY          = 12
+LIGHT_GREEN    = 13
+L_GRN          = 14
+LIGHT_BLUE     = 14
+L_BLU          = 14
+LIGHT_GRAY     = 15
+L_GRY          = 15
+
+
+;__MACROS_______________________________________________________________________
+
+defm      VLib_Wait
           
-; Sets the border color
-defm      SLib_SetBorderCols
+_loop     lda            #/1
+          cmp            @RASTER    
+          bne            _loop
+
+          endm
+
+
+                                   
+defm      VLib_SetBdrCol           ; _ -> <set border color>    
+
+          lda            #/1
+          sta            @EXTCOL             
+
+          endm
+
+
+
+defm      VLib_SetBGCols           ; (bgc1, bgc2, bgc3, bgc4) -> <set bg colors>               
           
-          lda #/1                 ; Color0 -> A
-          sta EXTCOL              ; A -> EXTCOL
-          lda #/2                 ; Color1 -> A
-          sta BGCOL0              ; A -> BGCOL0
-          lda #/3                 ; Color2 -> A
-          sta BGCOL1              ; A -> BGCOL1
-          lda #/4                 ; Color3 -> A
-          sta BGCOL2              ; A -> BGCOL2
-          lda #/5                 ; Color4 -> A
-          sta BGCOL3              ; A -> BGCOL3
+          lda            #/1              
+          sta            @BGCOL0            
+          lda            #/2                
+          sta            @BGCOL1           
+          lda            #/3               
+          sta            @BGCOL2            
+          lda            #/4                
+          sta            @BGCOL3              
           
           endm
+          
+
+

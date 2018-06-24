@@ -1,4 +1,4 @@
-##{0:0:0:main.prg}C:\dev\C64\Airship Defense\main.asm
+##{0:0:0:main.prg}C:\dev\C64\Airship Defence\main.asm
 
 ;_______________________________________________________________________________
 ;
@@ -32,8 +32,8 @@
           lda            #$FC      ; Disable run/stop + restore keys
           sta            $0328     
           
-          VLib_SetBdrCol BLK
-          VLib_SetBGCols BLK, BLK, BLK, BLK
+          VLib_SetBdrCol BLACK
+          VLib_SetBGCols BLACK, BLACK, BLACK, BLACK
 ;_______________________________________________________________________________
 
 
@@ -43,7 +43,7 @@
 
           
 
-##{0:0:0:game.prg}C:\dev\C64\Airship Defense\game.asm
+##{0:0:0:game.prg}C:\dev\C64\Airship Defence\game.asm
 
 ;__GAME LOOP____________________________________________________________________
 
@@ -53,42 +53,27 @@ gameLoop_glb
           ; UPDATE GAME
           jmp            gameLoop_glb
 
-##{0:0:0:video_lib.prg}C:\dev\C64\Airship Defense\video_lib.asm
+##{0:0:0:video_lib.prg}C:\dev\C64\Airship Defence\video_lib.asm
 
 ;__COLOR CONSTANTS______________________________________________________________
 
-BLACK          = 0
-BLK            = 0
-WHITE          = 1
-WHT            = 1
-RED            = 2
-CYAN           = 3 
-CYN            = 3
-PURPLE         = 4
-PPL            = 4
-GREEN          = 5
-GRN            = 5
-BLUE           = 6
-BLU            = 6
-YELLOW         = 7
-YLW            = 7
-ORANGE         = 8
-ORG            = 8
-BROWN          = 9
-BRN            = 9
-LIGHT_RED      = 10
-L_RED          = 10
-DARK_GRAY      = 11
-D_GRY          = 11
-MED_GRAY       = 12
-M_GRY          = 12
-LIGHT_GREEN    = 13
-L_GRN          = 14
-LIGHT_BLUE     = 14
-L_BLU          = 14
-LIGHT_GRAY     = 15
-L_GRY          = 15
-
+BLACK           = 0
+WHITE           = 1
+RED             = 2
+CYAN            = 3 
+PURPLE          = 4
+GREEN           = 5
+BLUE            = 6
+YELLOW          = 7
+ORANGE          = 8
+BROWN           = 9
+LIGHT_RED       = 10
+DARK_GRAY       = 11
+MED_GRAY        = 12
+LIGHT_GREEN     = 13
+LIGHT_BLUE      = 14
+LIGHT_GRAY      = 15
+          
 
 ;__MACROS_______________________________________________________________________
 
@@ -127,7 +112,7 @@ defm      VLib_SetBGCols           ; (bgc1, bgc2, bgc3, bgc4) -> <set bg colors>
 
 
 
-##{0:0:0:memory.prg}C:\dev\C64\Airship Defense\memory.asm
+##{0:0:0:memory.prg}C:\dev\C64\Airship Defence\memory.asm
 
 ;_______________________________________________________________________________
 ;

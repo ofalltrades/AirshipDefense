@@ -5,7 +5,7 @@ gameLoop_glb = $082F
 
 ******* 0 Unused label(s) *******
 
-******* 23 Variable(s) *******
+******* 38 Variable(s) *******
 @BGCOL0  = $D021
 @BGCOL1  = $D022
 @BGCOL2  = $D023
@@ -13,43 +13,73 @@ gameLoop_glb = $082F
 @EXTCOL  = $D020
 @RASTER  = $D012
 BLACK  = $0000
+BLK  = $0000
+BLU  = $0006
 BLUE  = $0006
+BRN  = $0009
 BROWN  = $0009
 CYAN  = $0003
+CYN  = $0003
+D_GRY  = $000B
 DARK_GRAY  = $000B
 GREEN  = $0005
+GRN  = $0005
+L_BLU  = $000E
+L_GRN  = $000E
+L_GRY  = $000F
+L_RED  = $000A
 LIGHT_BLUE  = $000E
 LIGHT_GRAY  = $000F
 LIGHT_GREEN  = $000D
 LIGHT_RED  = $000A
+M_GRY  = $000C
 MED_GRAY  = $000C
 ORANGE  = $0008
+ORG  = $0008
+PPL  = $0004
 PURPLE  = $0004
 RED  = $0002
 tgt_c64  = $0001
 WHITE  = $0001
+WHT  = $0001
 YELLOW  = $0007
-******* 22 Unused variables(s) *******
+YLW  = $0007
+******* 37 Unused variables(s) *******
 @BGCOL0
 @BGCOL1
 @BGCOL2
 @BGCOL3
 @EXTCOL
 @RASTER
+BLACK
+BLU
 BLUE
+BRN
 BROWN
 CYAN
+CYN
+D_GRY
 DARK_GRAY
 GREEN
+GRN
+L_BLU
+L_GRN
+L_GRY
+L_RED
 LIGHT_BLUE
 LIGHT_GRAY
 LIGHT_GREEN
 LIGHT_RED
+M_GRY
 MED_GRAY
 ORANGE
+ORG
+PPL
 PURPLE
 RED
 tgt_c64
 WHITE
+WHT
 YELLOW
+YLW
 
