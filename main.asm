@@ -31,7 +31,7 @@
           sta            $0328     
           
           VLib_SetBdrCol BLK
-          VLib_SetBGCols BLK, BLK, BLK, BLK
+          VLib_SetBGCols L_BLU, BLK, BLK, BLK
 ;_______________________________________________________________________________
 
 
